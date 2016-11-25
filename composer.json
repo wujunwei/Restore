@@ -1,5 +1,5 @@
 {
-    "name": "adam/restore",
+    "name": "firstw/restore",
     "description": "a Denpdency Injection container",
     "type": "composer-plugin",
     "authors": [
