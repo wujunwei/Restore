@@ -78,6 +78,11 @@ class Container
         }
     }
 
+    /**
+     * add create function
+     * @param $key
+     * @param $callable
+     */
     public function addFactory($key, $callable)
     {
         if (!$this->keyExist($key)) {
