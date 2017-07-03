@@ -28,7 +28,7 @@ class Container
         }
     }
 
-    protected function set($key, $value)
+    public function set($key, $value)
     {
         $this->keys[$key] = true;
         $this->instances[$key] = $value;
@@ -103,7 +103,7 @@ class Container
      * @param bool $isInstance
      * @return false|object
      */
-    public function getClass($class, array $params = [], $isInstance = true)
+    public function get($class, array $params = [], $isInstance = true)
     {
         if (isset($this->forbidden[$class])){
             return false;
@@ -172,7 +172,7 @@ class Container
                 if (!$p->isDefaultValueAvailable()) {
                     $className = $p->getClass();
                     if ($className !== null){
-                        $result[] = $this->getClass($className->getName());
+                        $result[] = $this->get($className->getName());
                     }else{
                         throw new \InvalidArgumentException(sprintf('The type of %d parameter %s are not the same as required.', $key, $paramsName));
                     }
