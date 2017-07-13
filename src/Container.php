@@ -53,8 +53,8 @@ class Container
     {
         $reflect = $this->reflectClass($class);
         $constructor = $reflect->getConstructor();
-        $params = $this->dealWithParams($constructor, $params);
         if (!is_null($constructor)) {
+            $params = $this->dealWithParams($constructor, $params);
             $instance = $reflect->newInstanceArgs($params);
         } else {
             $instance = $reflect->newInstanceWithoutConstructor();
